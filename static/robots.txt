@@ -1,0 +1,68 @@
+# I do not condone AI scraping for image generation on this site in any capacity.
+# The code is open source for any public use.
+
+User agent: anthropic-ai
+Disallow: /
+
+User agent: Applebot-Extended
+Disallow: /
+
+User agent: Bytespider
+Disallow: /
+
+User agent: CCBot
+Disallow: /
+
+User agent: ChatGPT-User
+Disallow: /
+
+User agent: Claude-Web
+Disallow: /
+
+User agent: cohere-ai
+Disallow: /
+
+User agent: Diffbot
+Disallow: /
+
+User agent: FacebookBot
+Disallow: /
+
+User agent: Google-Extended
+Disallow: /
+
+User agent: GoogleOther
+Disallow: /
+
+User agent: GPTBot
+Disallow: /
+
+User agent: OmigiliBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omigili
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-Agent: *
+Disallow: /.gif
+Disallow: /.jpeg
+Disallow: /.jpg
+Disallow: /.png
+Disallow: /.svg
+Disallow: /.mp4
+Disallow: /.webm

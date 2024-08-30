@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Italic.woff2') format('woff2');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Light.woff2') format('woff2');
+    font-weight: 300;
+}
+:root {
+    --purple: #27293e;
+    --dark-purple: #181b2a;
+    --darker-purple: #0c0e18;
+    --off-white: #E0E0E0;
+    --red: #B72749;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'JetBrains Mono';
+    color: var(--off-white);
+    background-color: var(--purple);
+    background-image: url('../design/background-image.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: min(4vw, 24px);
+    margin: 20px 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+p {
+    font-size: min(3vw, 16px);
+    margin-bottom: 10px;
+}
+li {
+    list-style: none;
+    font-size: min(3vw, 16px);
+    margin-bottom: 10px;
+}
+a {
+    transition: filter 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    height: 60px;
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position:fixed;
+    z-index: 8;
+}
+nav a {
+    height: 58px;
+}
+nav a.active {
+    border-bottom: 2px solid var(--red);
+    font-size: auto;
+}
+.links-container {
+    margin: 0 40vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--off-white);
+}
+.nav-item:hover,
+nav a:hover {
+    color: var(--red);
+}
+.mobile-nav-title {
+    display: none;
+}
+nav svg {
+    fill: var(--off-white);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s;
+}
+nav svg:hover {
+    fill: var(--red);
+}
+#sidebar-active{
+    display: none;
+}
+.open-sidebar-button,
+.close-sidebar-button {
+    display: none;
+}
+
+#content {
+    background-color: var(--purple);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 20vw;
+    gap: 80px;
+}
+.info-box {
+    padding: 20px;
+}
+.info-box svg {
+    margin-right: 10px;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 40px;
+}
+.card {
+    width: 325px;
+    background-color: var(--dark-purple);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    border: 2px solid --off-white;
+}
+.card img {
+    border-radius: 4px;
+}
+.card-content {
+    padding: 10px;
+}
+
+.gallery-container {
+    background-color: var(--dark-purple);
+    padding: 0 16vw;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    padding: 0;
+    margin: 20px 0;
+    margin-bottom: 60px;
+}
+.gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.gallery img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+span.email::after {
+	content: "commission@onicide.com";
+}
+span.discord::after {
+	content: "Discord - @onicide";
+}
+
+footer {
+    display: flex;
+    justify-content:center;
+    padding: 40px;
+    background-color: var(--darker-purple);
+    bottom: 0;
+    flex-shrink: 0;
+}
+.footer-column {
+    width: auto;
+    margin: 0 25px;
+}
+.footer-column svg {
+    margin-right: 10px;
+}
+.footer-column a {
+    display: block;
+    margin: 10px 20px;
+    color: var(--off-white);
+    text-decoration: none;
+}
+footer a:hover {
+    color: var(--red);
+    filter: url(#color-filter);
+}
+
+@media(max-width: 1200px) {
+    .info-container {
+        flex-direction: column;
+        gap: 0;
+        margin: 20px 10vw 0 10vw;
+    }
+    .info-box {
+        padding: 0;
+    }
+    .info-box h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .body-image {
+        display: flex;
+        justify-content: center;
+    }
+    .wave {
+        display: none;
+    }
+    .gallery-container {
+        padding: 0 10vw 0 10vw;
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Minimum of 3 columns */
+    }
+
+}
+@media(max-width: 500px) {
+    nav {
+        justify-content: flex-end;
+    }
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        margin: 0;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        height: 100%;
+        background-color: var(--dark-purple);
+        transition: 0.25s ease-out;
+    }
+    .nav-item {
+        height: 60px;
+    }
+    nav a {
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button,
+    .close-sidebar-button {
+        display: block;
+        top: 0;
+        position: aboslute;
+    }
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    .nav-title {
+        display: none;
+    }
+    .mobile-nav-title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        color: var(--off-white);
+        margin-right: auto;
+        width: 33%;
+    }
+    .info-container {
+        margin: 0 3vw 0 3vw;
+    }
+    .info-box {
+        padding: 0;
+    }
+    .body-container {
+        margin: 0 3vw;
+    }
+    .gallery-container {
+        padding: 0 6vw 0 6vw;
+    }
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+    .gallery {
+        gap: 3px;
+        margin-bottom: 28px;
+    }
+    .gallery-container h2 {
+        margin: 20px 0 0 0;
+    }
+}
